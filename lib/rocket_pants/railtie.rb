@@ -7,8 +7,7 @@ module RocketPants
     config.rocket_pants.pass_through_errors = nil
     config.rocket_pants.pass_through_errors = nil
 
-    locale_dir = File.expand_path('../locale/', __FILE__)
-    config.i18n.railties_load_path.unshift(*Dir["#{locale_dir}/*.{rb,yml}"])
+    config.i18n.load_path << File.expand_path('../locale/en.yml', __FILE__)
 
     initializer "rocket_pants.logger" do
       ActiveSupport.on_load(:rocket_pants) { self.logger ||= Rails.logger }
