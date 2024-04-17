@@ -9,9 +9,6 @@ module RocketPants
 
       # Extend the response on first include.
       class_attribute :_default_version
-      unless ActionController::TestResponse < ResponseHelper
-        ActionController::TestResponse.send :include, ResponseHelper
-      end
 
       unless ActionDispatch::TestResponse < ResponseHelper
         ActionDispatch::TestResponse.send :include, ResponseHelper
